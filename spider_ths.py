@@ -33,9 +33,9 @@ def parse_one_page(html):
     #                      '.*?tr.*?>(.*?)</td>'                              #大单流入
     #                      '.*?</td>'
     #                      ,re.S)
-    pattern = re.compile('<tr.*?first tc.*?>(.*?)</td>'                  #序号        
-                         '.*?href="(.*?)".*?>(.*?)</a></td>'              #股票代码  
-                         '.*?J_showCanvas.*?>(.*?)</a></td>'             #股票简称  
+    pattern = re.compile('<tr.*?first tc.*?>(.*?)</td>'                  #序号
+                         '.*?href="(.*?)".*?>(.*?)</a></td>'              #股票代码
+                         '.*?J_showCanvas.*?>(.*?)</a></td>'             #股票简称
                          '.*?td>(.*?)</td>'                                #最新价
                          '.*?td.*?>(.*?)</td>'                             #涨跌幅
                          '.*?td.*?>(.*?)</td>'                             #换手率
@@ -44,13 +44,9 @@ def parse_one_page(html):
                          '.*?td.*?>(.*?)</td>'                              #净额
                          '.*?td.*?>(.*?)</td>'                              #成交额
                          '.*?td.*?>(.*?)</td>'                              #大单流入
-                         '.*?</td>'
+                         '.*?</tr>'
                          ,re.S)
-                         # '.*?data-src="(.*?)".*?name.*?a.*?>(.*?)</a>'
-                         # '.*?star.*?>(.*?)</p>'
-                         # '.*?releasetime.*?>(.*?)</p>'
-                         # '.*?integer.*?>(.*?)</i>'
-                         # '.*?fraction.*?>(.*?)</i>', re.S)
+
     items = re.findall(pattern, html)
     print(items)
     # for item in items:
